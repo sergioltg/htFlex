@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+DCLICK DESENVOLVIMENTO DE SOFTWARES
+All Rights Reserved.
+
+-->
+
+<!--- The default skin class for a CollapsePanel  
+
+@see spark.components.SkinnableContainer
+
+@langversion 3.0
+@playerversion Flash 10
+@playerversion AIR 1.5
+@productversion Flex 4
+-->
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:fb="http://ns.adobe.com/flashbuilder/2009" alpha.disabled="0.5" xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:controls="br.com.htecon.controls.*">
+	<fx:Metadata>[HostComponent("br.com.htecon.controls.collapsepanel.CollapsePanel")]</fx:Metadata>
+	
+	<fx:Script>
+		<![CDATA[
+			import br.com.htecon.skin.Images;
+			
+			import spark.skins.spark.ButtonSkin;
+		]]>
+	</fx:Script>
+	<s:filters>
+		<!--<s:DropShadowFilter id="dropShadow" angle="90" blurX="2" blurY="2" distance="2" alpha=".1"/>-->
+	</s:filters>
+	
+	<s:states>
+		<s:State name="open" />
+		<s:State name="close" />
+		<s:State name="disabled" />
+		<s:State name="normal" />
+	</s:states>
+	
+	<s:Group id="wraper" left="0" top="31" right="0" bottom="0" clipAndEnableScrolling="true">
+		<s:VGroup id="vGroupContent" left="0" right="1" y="0" y.close="{vGroupContent.contentHeight * -1}" paddingBottom="0">
+			<s:Group id="contentGroup" width="100%">
+				<s:layout>
+					<s:BasicLayout/>
+				</s:layout>
+			</s:Group>
+			<s:Group width="100%">
+				<controls:HtButtonBar id="buttonBarFiltro" styleName="roundButtonBar" buttons="{[HtButtonBar.CLEAR_BUTTON, HtButtonBar.FETCH_BUTTON]}" right="5" paddingBottom="5"/>
+			</s:Group>
+		</s:VGroup>
+	</s:Group>
+	
+	
+	<s:Rect width="100%" height="100%">
+		<s:stroke>
+			<s:SolidColorStroke color="#bababa"/>
+		</s:stroke>
+	</s:Rect>
+	
+	<s:Group top="0" height="31" left="0" right="0">
+		<s:Rect width="100%" height="100%">
+			<s:fill>
+				<s:LinearGradient rotation="-90">
+					<s:GradientEntry color="#e5e5e5"/>
+					<s:GradientEntry color="#f2f3f3" />
+				</s:LinearGradient>
+			</s:fill>
+			<s:stroke>
+				<s:SolidColorStroke color="#bababa" />
+			</s:stroke>
+		</s:Rect>
+		
+		<s:Group id="staticGroup" width="100%" height="100%" 
+				 left="29" right="5" top="6" bottom="5" disabledAlpha="1" >
+			<s:layout>
+				<s:HorizontalLayout verticalAlign="middle"/>
+			</s:layout>
+			
+			<s:Group>
+				<s:BitmapImage source="{Images.IMAGE_ICO_SEARCH}"/>
+			</s:Group>
+			
+			<s:Group>
+				<s:Label text="Filtro" color="#FFFFFF" fontSize="12" top="4" fontWeight="bold"/>
+				<s:Label text="Filtro" color="#464646" fontSize="12" top="3" fontWeight="bold"/>
+			</s:Group>
+		</s:Group>
+		
+		<s:ToggleButton id="changeModeElement" verticalCenter="0" left="0"  right="0" top="0" bottom="0"
+						buttonMode="true" useHandCursor="true" 
+						selected.open="true" selected.close="false"
+						skinClass="br.com.htecon.controls.collapsepanel.ChangeCollapseButtonSkin"/>
+
+	</s:Group>
+	
+	<s:transitions>
+		<s:Transition fromState="close" toState="open">
+			<s:Move target="{vGroupContent}" duration="300"/>
+		</s:Transition>
+		
+		<s:Transition fromState="open" toState="close">
+			<s:Move target="{vGroupContent}" duration="300"/>
+		</s:Transition>
+	</s:transitions>
+	
+</s:Skin>

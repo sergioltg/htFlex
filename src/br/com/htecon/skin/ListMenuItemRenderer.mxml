@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:s="library://ns.adobe.com/flex/spark" 
+				xmlns:mx="library://ns.adobe.com/flex/mx"  width="100%"
+				autoDrawBackground="true">
+	
+	<s:HGroup>
+		<s:Group>
+			<mx:Image source="{data.icon}" left="10" top="5"/>
+		</s:Group>
+		
+		<s:Group>
+			<s:Label text="{data.nmMenu}" color="#464646" paddingLeft="5" paddingTop="7" paddingBottom="5" verticalCenter="0" width="100%"/>
+		</s:Group>
+	</s:HGroup>
+	
+</s:ItemRenderer>

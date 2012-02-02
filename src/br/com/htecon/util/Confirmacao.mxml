@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<util:ConfirmacaoClass xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:s="library://ns.adobe.com/flex/spark" 
+				layout="vertical" verticalAlign="middle"
+				width="400"
+				height="160" xmlns:util="br.com.htecon.util.*" title="Confirmação" xmlns:mx1="library://ns.adobe.com/flex/mx">	
+	<mx:VBox width="100%" horizontalAlign="center" verticalAlign="middle">
+		<mx:Label text="{text}" 
+				 height="40"
+				 fontSize="12"/>
+	</mx:VBox>
+	<mx:HBox height="28"  width="100%" horizontalAlign="center">
+		<s:Button click="confirm('Yes');" height="100%"
+				   label="Sim"/>
+		<s:Button click="confirm('No');" height="100%"
+				   label="Não"/>
+	</mx:HBox>
+</util:ConfirmacaoClass>
